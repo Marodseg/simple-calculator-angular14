@@ -15,7 +15,7 @@
 ```bash
 # clone the repository
 
-git clone https://github.com/...
+git clone https://github.com/Marodseg/innocv-calculator.git
 
 # Enter the project folder and run the commands below:
 
