@@ -1,16 +1,15 @@
 # INNOCV - Calculator
+
 ### "The simplest calculator ever in Angular 14"
 
+## Operations:
 
-##  Operations:
-
-- Sum 
-- Subtraction 
-- Division 
+- Sum
+- Subtraction
+- Division
 - Multiplication
 
-
-##  How to run
+## How to run
 
 ```bash
 # clone the repository
@@ -21,4 +20,11 @@ git clone https://github.com/Marodseg/innocv-calculator.git
 
 npm install
 npm run start
+```
+## Format
+
+```bash
+# Format the code with prettier
+
+npm run format
 ```

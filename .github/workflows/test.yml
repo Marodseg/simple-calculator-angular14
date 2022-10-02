@@ -1,27 +1,31 @@
-name: Test
+# GitHub Actions docs
+# https://help.github.com/en/articles/about-github-actions
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions
+name: CI
+
 on: [push]
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+
+    # Machine environment:
+    # https://help.github.com/en/articles/software-in-virtual-environments-for-github-actions#ubuntu-1804-lts
+    # We specify the Node.js version manually below, and use versioned Chrome from Puppeteer.
+    runs-on: ubuntu-18.04
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 16.x
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm run test
-      - name: Run tests with coverage
-        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
-        env:
-          CHROME_BIN: /usr/bin/google-chrome
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: ./coverage/coverage-final.json
-          flags: unit
-          name: codecov-umbrella
-          fail_ci_if_error: true
+    - uses: actions/checkout@v1
+    - name: Use Node.js 12.8
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12.8
+    - name: Install dependencies
+      run: npm install
+    - name: Lint
+      run: npm run lint
+    - name: Build
+      run: npm run build -- --prod
+    - name: Test
+      run: npm test -- --configuration=ci
+    - name: E2E
+      run: npm run e2e -- --configuration=ci
