@@ -9,7 +9,7 @@
     "test": "ng test",
     "format": "prettier --write .",
     "lint": "ng lint",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCustom"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless"
   },
   "private": true,
   "dependencies": {
