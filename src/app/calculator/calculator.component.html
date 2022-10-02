@@ -1,0 +1,58 @@
+<div class="calculator">
+  <input
+    type="text"
+    class="calculator-screen"
+    [value]="currentNumber"
+    disabled
+  />
+
+  <div class="calculator-keys">
+    <button type="button" (click)="addOperator('+')" class="operator" value="+" [disabled]="!showOperators">
+      +
+    </button>
+    <button type="button" (click)="addOperator('-')" class="operator" value="-" [disabled]="!showOperators">
+      -
+    </button>
+    <button type="button" (click)="addOperator('*')" class="operator" value="*" [disabled]="!showOperators">
+      &times;
+    </button>
+    <button type="button" (click)="addOperator('/')" class="operator" value="/" [disabled]="!showOperators">
+      &divide;
+    </button>
+
+    <button type="button" (click)="addOperand('7')" value="7" [disabled]="!showOperators">7</button>
+    <button type="button" (click)="addOperand('8')" value="8" [disabled]="!showOperators">8</button>
+    <button type="button" (click)="addOperand('9')" value="9" [disabled]="!showOperators">9</button>
+
+    <button type="button" (click)="addOperand('4')" value="4" [disabled]="!showOperators">4</button>
+    <button type="button" (click)="addOperand('5')" value="5" [disabled]="!showOperators">5</button>
+    <button type="button" (click)="addOperand('6')" value="6" [disabled]="!showOperators">6</button>
+
+    <button type="button" (click)="addOperand('1')" value="1" [disabled]="!showOperators">1</button>
+    <button type="button" (click)="addOperand('2')" value="2" [disabled]="!showOperators">2</button>
+    <button type="button" (click)="addOperand('3')" value="3" [disabled]="!showOperators">3</button>
+
+    <button type="button" (click)="addOperand('0')" value="0" [disabled]="!showOperators">0</button>
+    <button type="button" (click)="addOperand('.')" class="decimal" value="." [disabled]="!showOperators">
+      .
+    </button>
+    <button
+      type="button"
+      (click)="clearCalculator()"
+      class="ac-button"
+      value="ac-button"
+    >
+      AC
+    </button>
+
+    <button
+      type="button"
+      (click)="addOperator('=')"
+      class="equal-button"
+      value="="
+      [disabled]="!showOperators"
+    >
+      =
+    </button>
+  </div>
+</div>
