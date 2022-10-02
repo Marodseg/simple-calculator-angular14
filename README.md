@@ -27,4 +27,7 @@ npm run start
 # Format the code with prettier
 
 npm run format
+
+# Lint the code with eslint
+npm run lint
 ```
