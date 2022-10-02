@@ -1,0 +1,27 @@
+name: Test
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm install
+      - name: Run tests
+        run: npm run test
+      - name: Run tests with coverage
+        run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+        env:
+          CHROME_BIN: /usr/bin/google-chrome
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/coverage-final.json
+          flags: unit
+          name: codecov-umbrella
+          fail_ci_if_error: true
