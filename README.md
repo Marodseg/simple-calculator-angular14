@@ -1,4 +1,4 @@
-# INNOCV - Calculator
+# Calculator
 
 ### "The simplest calculator ever in Angular 14"
 
@@ -14,7 +14,7 @@
 ```bash
 # clone the repository
 
-git clone https://github.com/Marodseg/innocv-calculator.git
+git clone https://github.com/Marodseg/simple-calculator-angular14.git
 
 # Enter the project folder and run the commands below:
 
